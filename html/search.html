@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Resource Search</title>
+
+<link rel="stylesheet" type="text/css" href="https://eafdbc63c97ce6bec9ef-b0a668e5876bef6fe25684caf71db405.ssl.cf1.rackcdn.com/v1-latest/canon.min.css">
+<link rel="stylesheet" href="../css/search.css">  
+<script type="application/javascript" src="https://eafdbc63c97ce6bec9ef-b0a668e5876bef6fe25684caf71db405.ssl.cf1.rackcdn.com/v1-latest/canon.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="rs-nav-primary">
+    <div class="rs-container">
+      <div class="topnav">
+      <ul class="rs-nav">
+        <li class="rs-nav-item"> <select data-bind="options: team, optionsCaption: 'Select Team', value: selectedTeam"></select></li>
+      <!--  <li class="rs-nav-item"><div><input data-bind="attr: {placeholder: 'Account Name'}, value: account"></input></li> -->
+
+        <li class="rs-nav-item"><select data-bind="options: product, optionsCaption: 'Select Product', value: selectedProduct"></select></li>
+        <li class="rs-nav-item"><select data-bind='options: region, optionsCaption: "Select Region", value: selectedRegion'></select></li>
+        <li class="rs-nav-item"> <select data-bind='options: status, optionsCaption: "Select Status", value: selectedStatus'></select></li>
+        <li class="rs-nav-item"><button class="rs-btn rs-btn-primary" data-bind='click: getIt'>Submit</button></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+<div class="tablewidth">
+  <table class="rs-list-table">
+      <thead>
+      <tr>
+      <th><span>Team</span></th>
+      <th><span>Account Number</span></th>
+      <th><span>Account Name</span></th>
+      <th><span>Region</span></th>
+      <th><span>Product</span></th>
+      <th><span>Status</span></th>
+      </tr>
+      </thead>
+
+    <tbody data-bind="foreach: resources">
+      <tr>
+        <td class="rs-text" data-bind="text: team"></td>
+        <td class="rs-text" data-bind="text: account_num"></td>
+        <td class="rs-text" data-bind="text: account_name"></td>
+        <td class="rs-text" data-bind="text: region"></td>
+        <td class="rs-text" data-bind="text: product"></td>
+        <td class="rs-status" data-bind="text: status, css:{'rs-status-error': status == 'error', 'rs-status-ok':  status == 'active', resize: status == 'resize', build: status == 'build', available: status == 'available'}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script type="text/javascript" src="../lib/knockout-3.2.0.js"></script>
+<script type="text/javascript" src="../javascript/search_view_model.js"></script>
+
+</body>
+</html>

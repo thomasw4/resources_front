@@ -1,0 +1,26 @@
+.error {
+	background-color:#c40022!important;
+}
+
+.active, .available {
+	background-color: #00a96d!important;
+}
+
+.build, .resize{
+	background-color:#ff9d00!important;
+}
+
+.topnav {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.tablewidth {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.size {
+	font-size: 50px;
+}
